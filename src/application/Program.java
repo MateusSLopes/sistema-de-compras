@@ -1,6 +1,6 @@
 package application;
 
-import entities.Client;
+import entities.Customer;
 import entities.Order;
 import entities.OrderItem;
 import entities.Product;
@@ -24,12 +24,12 @@ public class Program {
         String email = sc.nextLine();
         System.out.print("Birth date (DD/MM/YYYY): ");
         Date birthDate = sdf.parse(sc.nextLine());
-        Client client = new Client(name,email,birthDate);
+        Customer customer = new Customer(name,email,birthDate);
 
         System.out.println("Enter order data:");
         System.out.print("Status: ");
         String orderStatus = sc.nextLine();
-        Order order = new Order(client, new Date(), OrderStatus.valueOf(orderStatus));
+        Order order = new Order(customer, new Date(), OrderStatus.valueOf(orderStatus));
 
         System.out.print("How many items to this order? ");
         int orderItems = sc.nextInt();
@@ -46,7 +46,7 @@ public class Program {
         }
 
         System.out.println(order);
-        System.out.println(client);
+        System.out.println(customer);
         System.out.println(order.showItems());
     }
 }

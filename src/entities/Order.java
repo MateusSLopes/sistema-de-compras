@@ -9,13 +9,13 @@ public class Order {
     private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private Date moment;
     private OrderStatus status;
-    private Client client;
+    private Customer customer;
     private List<OrderItem> items = new ArrayList<>();
 
     public Order(){
     }
-    public Order(Client client, Date moment, OrderStatus status) {
-        this.client = client;
+    public Order(Customer customer, Date moment, OrderStatus status) {
+        this.customer = customer;
         this.moment = moment;
         this.status = status;
     }
